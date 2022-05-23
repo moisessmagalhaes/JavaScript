@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Anatomia CSS</title>
+    <style>
+       .seletor {
+           color: #fff;
+           font-size: 30px;
+           text-align: center;
+           /* Multiplos valores */
+           border: solid 5px navy; /* Shorthand Property - Propriedades de acesso mais rápido */ 
+           font-family: Helvetica, monospace;
+           /* Funções */
+           width: calc(100% - 40px);
+           background-color: rgb(34,153,189);
+       }
+
+       /* Usando uma pseudo classe */
+       .seletor:hover { /* hover quando o mouse passar em cima do local */
+        background-color: orangered;
+       }
+
+       /* Usando pseudo elemento */
+       .seletor::first-letter {
+           font-size: 60px;
+           font-weight: bold;
+       }
+       /* Padrão de Nomenclatura */
+       /* dash-case - As palavras são separadas por um hífen, e tudo é sempre escrito em minúsculo. 
+          camelCase - As palavras compostas ou frases, onde cada palavra é iniciada com maiúsculas e unidas sem espaços.*/
+    </style>
+</head>
+
+<body>
+    <div class="seletor">Conteúdo</div>
+</body>
+
+</html>

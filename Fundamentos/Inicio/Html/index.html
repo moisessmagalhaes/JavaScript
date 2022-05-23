@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewreport" content="width=device-width, inicial-scale=1.0">
+    <meta http-equiv="x-UA-Compatible" content="ie=edge">
+    <title>Exercícios HTML</title>
+    <style>
+        #conteudo {
+            padding: 30px 0px; /* espaçamento */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exercícios HTML</h1>
+    </header>
+    <nav>
+        <a href wm-nav="exercicios/teste.html">00 - Teste</a> |
+        <a href wm-nav="exercicios/texto.html">01 - Texto</a> |
+        <a href wm-nav="exercicios/texto2.html">02 - Texto 2</a> |
+        <a href wm-nav="exercicios/listas.html">03 - Listas</a> |
+        <a href wm-nav="exercicios/listaAninhada.html">04 - Lista Aninhada</a> |
+        <a href wm-nav="exercicios/links.html">05 - Links</a> |
+        <a href wm-nav="exercicios/tabela.html">06 - Tabela</a> |
+        <a href wm-nav="form/form.html">07 - Formulário</a> |
+        <a href wm-nav="exercicios/imagens.html">08 - Imagens</a> |
+        <a href wm-nav="exercicios/video.html">09 - Video</a> |
+        <a href wm-nav="exercicios/tagsNaoVisuais.html">10 - Tags Não Visuais</a>
+    </nav>
+    <section id="conteudo"></section>
+    <footer>Curso de Web Moderno</footer>
+    <script>
+        document.querySelectorAll('[wm-nav]').forEach(link => {
+            const conteudo = document.getElementById('conteudo') // Obteve o conteúdo através do getElementById
+
+            link.onclick = function(e) { // função que será disparada no onclick
+                e.preventDefault() // previne o comportamento padrão, vai ficar parado.
+                
+                fetch(link.getAttribute('wm-nav')) // Requisição Ajax, em cima do link obtido
+                    .then(resp => resp.text()) 
+                    .then(html => conteudo.innerHTML = html) // Substitui o conteúdo da session
+
+            }
+        })
+    </script>
+</body>
+</html>
